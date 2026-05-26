@@ -1,99 +1,37 @@
 # CF Practice Ladder
 
-A clean beginner-friendly Codeforces practice ladder app.
+A modern Codeforces practice ladder builder that compares a user's solved problems with an expert Codeforces handle and recommends unsolved rated problems for targeted practice.
 
-It takes:
+## Live Demo
 
-1. your Codeforces handle
-2. an expert Codeforces handle
-
-Then it shows rated problems solved by the expert and marks whether you have already solved them or not.
+https://cf-practice-ladder.vercel.app
 
 ## Features
 
-- Compare your solved problems with an expert handle
-- Show solved and unsolved status
-- Filter by problem rating
-- Filter by tags such as dp, greedy, math, graphs
-- Search by problem name, tag or index
-- Direct problem links
-- Expert submission/code links
-- Local storage for saved handles
-- Clean responsive design
+- Compare your Codeforces submissions with an expert handle
+- Generate a personalized unsolved problem ladder
+- Filter problems by rating, tag and solved status
+- Search problems by name, index or tag
+- Direct links to Codeforces problems
+- Direct links to expert submissions
+- Saves handles in local storage
+- Animated neon gradient UI
+- Responsive design for desktop and mobile
 
-## Tech stack
+## Tech Stack
 
 - Next.js
 - React
-- Codeforces public API
-- Plain CSS, no Tailwind setup needed
+- CSS
+- Codeforces Public API
+- Vercel
 
-## How to run locally
+## How It Works
 
-First install Node.js from https://nodejs.org
+The app takes two Codeforces handles: a user handle and an expert handle. It fetches public submission data from Codeforces, finds the rated problems solved by the expert, and marks which of those problems the user has already solved or still needs to practice.
 
-Then open the project folder in VS Code and run:
+## Run Locally
 
 ```bash
 npm install
 npm run dev
-```
-
-Open this in your browser:
-
-```text
-http://localhost:3000
-```
-
-## Good handles to test
-
-Try these expert handles:
-
-- tourist
-- jiangly
-- Benq
-- Errichto
-- SecondThread
-
-## Important note about Codeforces API
-
-Codeforces allows public API access, but requests are rate-limited. This app waits about two seconds between user and expert requests so it does not hit the limit too easily.
-
-## Deploy to Vercel
-
-1. Push this folder to GitHub.
-2. Go to https://vercel.com
-3. Import the GitHub repository.
-4. Keep the default Next.js settings.
-5. Click Deploy.
-
-## Project structure
-
-```text
-cf-practice-ladder/
-├─ app/
-│  ├─ api/
-│  │  └─ ladder/
-│  │     └─ route.js
-│  ├─ globals.css
-│  ├─ layout.jsx
-│  └─ page.jsx
-├─ .gitignore
-├─ next.config.mjs
-├─ package.json
-└─ README.md
-```
-
-## What to improve later
-
-- Add login
-- Add saved ladders
-- Add daily target problems
-- Add recommended next rating level
-- Add charts for rating-wise progress
-- Add pagination for very large expert accounts
-
-
-## Neon UI update
-
-This version adds animated gradient borders to cards, inputs, selects, stat cards and secondary buttons. Use the Clear saved button if a previous handle is loaded from your browser storage.
