@@ -35,3 +35,11 @@ The app takes two Codeforces handles: a user handle and an expert handle. It fet
 ```bash
 npm install
 npm run dev
+
+## Author
+
+**Muhammad Al-Muzahid**
+
+- GitHub: https://github.com/almuzahid16
+- LinkedIn: https://www.linkedin.com/in/almuzahid/
+- Facebook: https://www.facebook.com/muhammadalmuzahid/
