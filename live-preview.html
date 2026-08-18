@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CF Ladder — Live Preview</title>
+  <style>
+    :root{--bg:#f5f7fb;--card:#fff;--line:#e4e8f0;--text:#172033;--muted:#6e788c;--primary:#4f46e5;--primary-soft:#eef2ff;--success:#16a34a;--danger:#dc2626;--soft:#f0f2f7}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit}.shell{max-width:1240px;margin:auto;padding:24px;display:grid;grid-template-columns:340px 1fr;gap:24px;min-height:100vh}.card{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:0 5px 18px rgba(19,31,56,.04)}
+    aside{padding:22px;height:max-content;position:sticky;top:24px}.pill{display:inline-flex;align-items:center;gap:8px;background:var(--primary-soft);color:var(--primary);font-size:12px;font-weight:800;padding:7px 11px;border-radius:999px}.dot{width:8px;height:8px;border-radius:99px;background:var(--primary)}h1{font-size:32px;margin:13px 0 4px;line-height:1}.muted{color:var(--muted)}.lead{font-size:14px;line-height:1.65;margin:0 0 24px}.label{font-size:13px;font-weight:750;display:block;margin:14px 0 7px}.input{width:100%;height:46px;border:1px solid var(--line);border-radius:14px;padding:0 14px;font-size:14px;background:#fff;outline:none}.input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}.hint{font-size:11px;color:var(--muted);margin-top:6px}.btn{border:0;border-radius:14px;height:44px;padding:0 16px;font-weight:800;cursor:pointer}.primary{background:var(--primary);color:#fff;width:100%;margin-top:18px}.ghost{background:transparent;color:var(--muted);width:100%;margin-top:5px}.divider{border-top:1px solid var(--line);margin:20px 0}.tiny-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.17em;color:#8b93a4}.saved{display:flex;align-items:center;border:1px solid var(--line);border-radius:15px;padding:9px 10px;margin-top:8px}.saved strong{font-size:13px}.saved span{font-size:11px;color:var(--muted);display:block}.saved button{margin-left:auto;border:0;background:none;color:var(--muted);cursor:pointer}.credit{font-size:11px;line-height:1.5;color:var(--muted)}
+    main{min-width:0}.hero{padding:24px}.eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.17em;color:#959dae}.hero-row{display:flex;gap:20px;align-items:end;justify-content:space-between}.hero h2{font-size:29px;margin:6px 0}.stats{display:grid;grid-template-columns:repeat(3,120px);gap:8px}.stat{background:var(--soft);padding:14px;border-radius:17px}.stat b{font-size:23px;display:block}.stat small{text-transform:uppercase;letter-spacing:.11em;font-size:9px;color:var(--muted);font-weight:900}.bar{height:8px;background:var(--soft);border-radius:99px;margin-top:20px;overflow:hidden}.bar i{display:block;height:100%;width:38%;background:var(--primary);border-radius:99px}.ratings{padding:18px 20px;margin-top:16px}.rating-head{display:flex;justify-content:space-between;align-items:center}.rating-list{display:flex;gap:8px;overflow:auto;margin-top:13px}.rating{min-width:78px;background:var(--soft);border:0;border-radius:12px;padding:8px 10px;font-weight:900;cursor:pointer}.rating small{display:block;font-size:9px;color:var(--muted);margin-top:3px}.rating.active{background:var(--primary);color:white}.rating.active small{color:#dfe2ff}.queue{margin-top:16px;overflow:hidden}.qhead{padding:17px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.qhead h3{margin:0;font-size:16px}.qhead p{margin:3px 0 0;font-size:11px;color:var(--muted)}.badge{font-size:11px;padding:6px 10px;border:1px solid #bbb;border-radius:999px;font-weight:800}.b-primary{border-color:#b8b4ff;color:var(--primary)}table{border-collapse:collapse;width:100%;font-size:13px}th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#8c95a7;text-align:left;padding:12px 16px;background:#fafbfc}td{padding:15px 16px;border-top:1px solid var(--line);vertical-align:middle}tr:hover td{background:#fafbff}.num{width:55px;text-align:center;color:#a2a9b7}.problem{font-weight:800}.tags{display:flex;gap:5px;margin-top:7px}.tag{font-size:9px;background:var(--soft);color:var(--muted);border-radius:999px;padding:4px 7px}.status{text-align:center}.ok{color:var(--success);border-color:#9ed8af}.no{color:var(--danger);border-color:#f3b1b1}.links{text-align:right}.links a{font-size:11px;text-decoration:none;padding:6px}.empty{display:none;padding:50px;text-align:center;color:var(--muted)}.notice{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5}
+    @media(max-width:900px){.shell{grid-template-columns:1fr;padding:14px}.hero-row{align-items:flex-start;flex-direction:column}.stats{width:100%;grid-template-columns:repeat(3,1fr)}aside{position:static}.hide-sm{display:none}.card{border-radius:22px}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside class="card">
+    <div class="pill"><span class="dot"></span> Codeforces practice tool</div>
+    <h1>CF Ladder</h1>
+    <p class="lead muted">See what a stronger handle solved, then climb one rating at a time.</p>
+    <form id="form">
+      <label class="label">Your Codeforces handle</label>
+      <input id="user" class="input" value="anirudtate" placeholder="e.g. anirudtate" required />
+      <label class="label">Reference handle</label>
+      <input id="expert" class="input" value="tourist" placeholder="e.g. tourist" required />
+      <div class="hint">Problems are taken from this handle's accepted submissions.</div>
+      <button class="btn primary" type="submit">Build my ladder</button>
+      <button class="btn ghost" type="button" id="save">☆ Save this matchup</button>
+    </form>
+    <div class="notice" id="message">Preview includes sample rows. Press “Build my ladder” to try the public Codeforces API when internet access is available.</div>
+    <div class="divider"></div>
+    <div class="tiny-title">Saved matchups</div>
+    <div id="saved"></div>
+    <div class="divider"></div>
+    <div class="credit">Original project credit: <a href="https://codeforces.com/profile/anirudtate" target="_blank"><b>anirudtate</b></a></div>
+  </aside>
+  <main>
+    <section class="card hero">
+      <div class="hero-row">
+        <div><div class="eyebrow">Active ladder</div><h2><span id="heroUser">anirudtate</span> <span style="color:#c4c8d1">→</span> <span id="heroExpert">tourist</span></h2><div class="muted" style="font-size:13px">Rating <span id="heroRating">1200</span> · <span id="count">8</span> problems in this step</div></div>
+        <div class="stats"><div class="stat"><b id="solved">3</b><small>Solved</small></div><div class="stat"><b id="remaining">5</b><small>Remaining</small></div><div class="stat"><b id="progressText">38%</b><small>Progress</small></div></div>
+      </div><div class="bar"><i id="progressBar"></i></div>
+    </section>
+    <section class="card ratings"><div class="rating-head"><b>Choose rating</b><span class="muted" style="font-size:11px" id="levelCount">5 levels available</span></div><div class="rating-list" id="ratings"></div></section>
+    <section class="card queue"><div class="qhead"><div><h3>Problem queue</h3><p>Start with an unsolved problem and keep moving down the list.</p></div><span class="badge b-primary" id="ratingBadge">Rating 1200</span></div><div style="overflow:auto"><table><thead><tr><th style="text-align:center">#</th><th>Problem</th><th class="hide-sm">Contest</th><th style="text-align:center">Status</th><th style="text-align:right">Links</th></tr></thead><tbody id="tbody"></tbody></table><div class="empty" id="empty">No problems found at this rating.</div></div></section>
+  </main>
+</div>
+<script>
+const sample=[
+ {cid:1,letter:'A',name:'Sample Warm-up',rating:800,status:'solved',id:1,tags:['implementation']},
+ {cid:2,letter:'A',name:'Greedy Practice',rating:800,status:'unsolved',id:1,tags:['greedy']},
+ {cid:3,letter:'B',name:'Counting Pairs',rating:1000,status:'solved',id:1,tags:['math','brute force']},
+ {cid:4,letter:'B',name:'Prefix & Suffix',rating:1200,status:'solved',id:1,tags:['strings']},
+ {cid:5,letter:'C',name:'Two Pointers Drill',rating:1200,status:'unsolved',id:1,tags:['two pointers']},
+ {cid:6,letter:'B',name:'Binary Search Step',rating:1200,status:'unsolved',id:1,tags:['binary search']},
+ {cid:7,letter:'C',name:'Graph Starter',rating:1200,status:'unsolved',id:1,tags:['graphs']},
+ {cid:8,letter:'D',name:'Dynamic Choices',rating:1200,status:'unsolved',id:1,tags:['dp']},
+ {cid:9,letter:'C',name:'Number Theory Route',rating:1400,status:'solved',id:1,tags:['number theory']},
+ {cid:10,letter:'D',name:'Advanced Greedy',rating:1600,status:'unsolved',id:1,tags:['greedy']}
+];
+let data=sample, rating=1200;
+const $=id=>document.getElementById(id);
+function render(){
+ const ratings=[...new Set(data.map(p=>p.rating))].sort((a,b)=>a-b); if(!ratings.includes(rating)) rating=ratings[0];
+ $('ratings').innerHTML=ratings.map(r=>{const ps=data.filter(p=>p.rating===r),s=ps.filter(p=>p.status==='solved').length;return `<button class="rating ${r===rating?'active':''}" onclick="rating=${r};render()">${r}<small>${s}/${ps.length}</small></button>`}).join('');
+ $('levelCount').textContent=`${ratings.length} levels available`; const ps=data.filter(p=>p.rating===rating), solved=ps.filter(p=>p.status==='solved').length, prog=ps.length?Math.round(solved/ps.length*100):0;
+ $('heroRating').textContent=rating;$('ratingBadge').textContent=`Rating ${rating}`;$('count').textContent=ps.length;$('solved').textContent=solved;$('remaining').textContent=ps.length-solved;$('progressText').textContent=prog+'%';$('progressBar').style.width=prog+'%';
+ $('tbody').innerHTML=ps.map((p,i)=>`<tr><td class="num">${i+1}</td><td><a class="problem" target="_blank" href="https://codeforces.com/contest/${p.cid}/problem/${p.letter}">${p.name}</a><div class="tags">${(p.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div></td><td class="hide-sm" style="font-family:monospace;color:var(--muted)">${p.cid}${p.letter}</td><td class="status"><span class="badge ${p.status==='solved'?'ok':'no'}">${p.status==='solved'?'✓ solved':'unsolved'}</span></td><td class="links"><a target="_blank" href="https://codeforces.com/contest/${p.cid}/problem/${p.letter}">open</a><a target="_blank" href="https://codeforces.com/contest/${p.cid}/submission/${p.id}">code</a></td></tr>`).join('');
+ $('empty').style.display=ps.length?'none':'block'; $('heroUser').textContent=$('user').value.trim()||'—'; $('heroExpert').textContent=$('expert').value.trim()||'—';
+}
+function renderSaved(){let s=[];try{s=JSON.parse(localStorage.getItem('cf-preview-saved')||'[]')}catch{};$('saved').innerHTML=s.length?s.map((m,i)=>`<div class="saved"><div><strong>${m.user}</strong><span>vs ${m.expert}</span></div><button onclick="loadSaved(${i})">load</button></div>`).join(''):'<div class="muted" style="font-size:11px;margin-top:10px">No saved matchups yet.</div>'}
+window.loadSaved=i=>{const s=JSON.parse(localStorage.getItem('cf-preview-saved')||'[]'),m=s[i];if(!m)return;$('user').value=m.user;$('expert').value=m.expert;$('form').dispatchEvent(new Event('submit',{cancelable:true}))};
+$('save').onclick=()=>{const m={user:$('user').value.trim(),expert:$('expert').value.trim()};if(!m.user||!m.expert)return;let s=[];try{s=JSON.parse(localStorage.getItem('cf-preview-saved')||'[]')}catch{};s=[m,...s.filter(x=>x.user!==m.user||x.expert!==m.expert)].slice(0,8);localStorage.setItem('cf-preview-saved',JSON.stringify(s));renderSaved()};
+$('form').addEventListener('submit',async e=>{e.preventDefault();const user=$('user').value.trim(),expert=$('expert').value.trim();$('message').textContent='Fetching Codeforces submissions…';try{const [u,x]=await Promise.all([fetch(`https://codeforces.com/api/user.status?handle=${encodeURIComponent(user)}`).then(r=>r.json()),fetch(`https://codeforces.com/api/user.status?handle=${encodeURIComponent(expert)}`).then(r=>r.json())]);if(u.status!=='OK'||x.status!=='OK')throw 0;const solved=new Set(u.result.filter(s=>s.verdict==='OK').map(s=>`${s.problem.contestId}-${s.problem.index}`)),seen=new Set();data=x.result.filter(s=>s.verdict==='OK'&&s.problem.rating!=null).filter(s=>{const k=`${s.problem.contestId}-${s.problem.index}`;if(seen.has(k))return false;seen.add(k);return true}).map(s=>({cid:s.problem.contestId,letter:s.problem.index,name:s.problem.name,rating:s.problem.rating,status:solved.has(`${s.problem.contestId}-${s.problem.index}`)?'solved':'unsolved',id:s.id,tags:s.problem.tags||[]})).sort((a,b)=>a.rating-b.rating);$('message').textContent=`Loaded ${data.length} unique accepted problems from ${expert}.`;render()}catch{$('message').textContent='Could not reach Codeforces from this preview. The design is still shown with sample data.';data=sample;render()}});
+render();renderSaved();
+</script>
+</body></html>

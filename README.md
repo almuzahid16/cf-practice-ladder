@@ -1,106 +1,37 @@
 # CF Practice Ladder
 
-A modern Codeforces practice ladder builder that compares a user's solved problems with an expert Codeforces handle and recommends unsolved rated problems for targeted practice.
+A focused Codeforces practice ladder. Enter your handle and a reference handle to see the unique accepted problems solved by the reference user, grouped by rating and marked with your solved/unsolved status.
 
-## Live Demo
+## Highlights
 
-https://cf-practice-ladder.vercel.app
+- Rating-by-rating problem ladder
+- Solved / remaining / progress summary
+- Saved handle matchups in browser storage
+- Last session (handles + selected rating) restored automatically
+- Responsive desktop/mobile interface
+- Light/dark and DaisyUI theme support
+- Direct problem and reference-submission links
 
-## Overview
-
-CF Practice Ladder helps competitive programming learners create a personalized practice list from an expert Codeforces handle. The app checks which rated problems an expert has solved and then marks which of those problems the user has already solved or still needs to practice.
-
-This project was built as a clean educational and portfolio project using public Codeforces API data.
-
-## Features
-
-- Compare your Codeforces submissions with an expert handle
-- Generate a personalized unsolved problem ladder
-- Filter problems by rating, tag and solved status
-- Search problems by name, index or tag
-- Direct links to Codeforces problems
-- Direct links to expert submissions
-- Saves handles in local storage
-- Animated neon gradient UI
-- Responsive design for desktop and mobile
-- Deployed live on Vercel
-
-## Tech Stack
-
-- Next.js
-- React
-- CSS
-- Codeforces Public API
-- Vercel
-- GitHub
-
-## How It Works
-
-The app takes two Codeforces handles:
-
-1. A user handle
-2. An expert handle
-
-It fetches public submission data from Codeforces, finds the rated problems solved by the expert, and marks which of those problems the user has already solved or still needs to practice.
-
-The final ladder is sorted by Codeforces rating, making it easier to move from easier problems to harder ones.
-
-## Project Structure
-
-```text
-cf-practice-ladder/
-├─ app/
-│  ├─ api/
-│  │  └─ ladder/
-│  │     └─ route.js
-│  ├─ globals.css
-│  ├─ layout.jsx
-│  └─ page.jsx
-├─ .gitignore
-├─ next.config.mjs
-├─ package-lock.json
-├─ package.json
-└─ README.md
-```
-
-## Run Locally
-
-Clone the repository or download the project files, then run:
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open:
+Then open `http://localhost:3000`.
 
-```text
-http://localhost:3000
+## Production build
+
+```bash
+npm run build
+npm start
 ```
 
-## Deployment
+## Data & saving
 
-The project is deployed on Vercel.
+Codeforces submission data is fetched through the public Codeforces API. Saved matchups and the last active session are kept only in the browser using `localStorage`; no database is required.
 
-Live: https://cf-practice-ladder.vercel.app
+## Credit
 
-## Future Improvements
-
-- Add problem difficulty recommendations based on user rating
-- Add tag-based learning paths
-- Add progress charts
-- Add export option for unsolved problems
-- Add user profile summary from Codeforces
-- Add better error handling for invalid handles and API limits
-
-## Author
-
-**Muhammad Al-Muzahid**
-
-- GitHub: https://github.com/almuzahid16
-- LinkedIn: https://www.linkedin.com/in/almuzahid/
-- Facebook: https://www.facebook.com/muhammadalmuzahid/
-
-## License
-
-This project is created for educational and portfolio purposes.
+Original project credit: [anirudtate](https://codeforces.com/profile/anirudtate)

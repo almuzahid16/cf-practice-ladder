@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-content;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+
+@layer components {
+  .cf-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 9999px;
+    animation: cf-spin 0.7s linear infinite;
+  }
+
+  .cf-spinner-lg {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-width: 4px;
+  }
+}
+
+@keyframes cf-spin {
+  to { transform: rotate(360deg); }
+}
